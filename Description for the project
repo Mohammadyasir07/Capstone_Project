@@ -1,0 +1,52 @@
+Title: Smart Occupancy Detection and Alert System
+Objective
+Build a real-time occupancy monitoring system that detects the number of people present in a
+live video feed using object detection, and automatically sends an email alert when the count
+exceeds 4 people.
+
+Background
+This assignment does not introduce new tools. It requires combining the components you have
+already built in earlier class projects:
+● Object detection with YOLO (used in the PPE Safety Compliance project)
+● Flask backend serving a video feed (used in the PPE Safety Compliance project)
+● HTML frontend displaying the live feed (used in the PPE Safety Compliance project)
+● Automated Gmail alerts using app passwords (used in the Gmail Automation module)
+
+Requirements
+Object Detection
+● Use any object detection model to detect and count the person class in each
+frame of a live or recorded video feed
+● Apply confidence thresholding to filter unreliable detections
+● Maintain a running count of people detected in the current frame
+
+Backend (Flask)
+● Load the object detection model and process the video stream frame by frame
+● Expose the live video feed to the frontend
+● Expose the current occupancy count to the frontend
+● Trigger the alert logic when the occupancy threshold is exceeded
+
+training_support@giindia.com Capstone Project Assignment - Quick Start Guide_v1.0
+
+Frontend (HTML)
+● Display the live video feed
+● Display the current occupancy count, updated in real time
+
+Automated Alerting
+● Reuse the Gmail app password and smtplib setup from the earlier module
+● Send an automated email when the occupancy count exceeds 4 people
+● Include the detected count and timestamp in the alert
+● Prevent duplicate alerts from being sent repeatedly for the same ongoing violation
+
+Deliverables
+● Complete project codebase (detection script, Flask backend, HTML frontend, email alert
+module)
+● A working demonstration showing:
+○ Live detection and people count on screen
+○ An automated email alert triggered when the count exceeds 4
+
+Constraints
+● Use any Object detection model for person detection (pretrained is acceptable)
+● Must use Flask for the backend and HTML (with CSS/JS) for the frontend
+● Must use Gmail app password authentication for alerts, not OAuth or a third-party email
+service
+● Alert threshold is fixed at more than 4 people
